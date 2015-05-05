@@ -1,9 +1,9 @@
 # CipherGrid
 A GUI based Java implementation of the Playfair cipher (with expanded table)<a href="http://en.wikipedia.org/wiki/Playfair_cipher" target="_blank"> Wikipedia</a>  
 
-<img src="images/CipherGrid.png" alt="CipherGrid"  width="837" height="572" CipherGrid>  
+<img src="CipherGrid/images/CipherGrid.png" alt="CipherGrid"  width="837" height="572" CipherGrid>  
 
-Please see <a href="https://github.com/speritzl9001/CipherGrid/blob/master/resources/Info.pdf" target="_blank">Info.pdf</a> in the "resources" folder for a more detailed look at the program.  
+Please see <a href="https://github.com/speritzl9001/CipherGrid/blob/master/CipherGrid/resources/Info.pdf" target="_blank">Info.pdf</a> in the "resources" folder for a more detailed look at the program.  
 
 Dependencies: <a href="https://code.google.com/p/guava-libraries/" target="_blank">Google Guava Libraries</a>  
 
