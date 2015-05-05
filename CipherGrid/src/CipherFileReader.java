@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class CipherFileReader {
 	
 	private String line; 
@@ -31,9 +30,7 @@ public class CipherFileReader {
 			this.readFile.add(scanner.nextInt()); // Pass the stored integer to the readFile ArrayList.
 		}
 
-		// Close the scanner object.
-		scanner.close();
-		
+		scanner.close(); // Close the scanner object.
 		return readFile; // Return the readFile ArrayList filled with the integers from the file.
 	}
 }
