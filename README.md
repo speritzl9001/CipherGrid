@@ -15,12 +15,12 @@ In HashBasedTable, each cell of the table contains two keys and one value so it'
 private Table<Integer,Integer,Integer> table = HashBasedTable.create(1, 1, 12);  
 ```
 
-In a LinkedHashMap duplicate entries are overwritten so it's used on the keyword to remove duplicate letters as required in the Playfair cipher.    
+In a LinkedHashMap duplicate entries are overwritten so it's used to remove duplicate letters in the keyword as required in the Playfair cipher. See Keyword.java in the src folder.   
 ```java
 private Map keywordMap = new LinkedHashMap();
 ```  
 
-Splitter is an replacement for the problematic built-in Java string splitting classes. It's used in Message.java. 
+Splitter is an replacement for the problematic built-in Java string splitting classes. See Message.java in the src folder. 
 > The built in Java utilities for splitting strings can have some quirky behaviors. For example, String.split silently discards trailing separators, and StringTokenizer respects exactly five whitespace characters and nothing else.
 >  
 <a href="https://code.google.com/p/guava-libraries/wiki/StringsExplained" target="_blank">Google Guava Splitter</a>  
