@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 
-
 public class Ciphergrid {
 
 	// Constructor
-	public Ciphergrid() {
-
-	}
+	public Ciphergrid() {	}
 
 	// Begin class fields ***********************************************************************
 	private String keywordAsString;
@@ -51,7 +48,6 @@ public class Ciphergrid {
 	private Integer c = 0; // Column of the last element that gets used in the table.
 	// END class fields ***********************************************************************
 
-
 	// Fill the grid with what ever is pass in.
 	public void fill(ArrayList<Integer> keyword, ArrayList<Integer> message, int tableWidth) {
 		//public void fill(ArrayList<Integer> inputArr, int tableWidth) {
@@ -75,8 +71,8 @@ public class Ciphergrid {
 		// Loop through the table's cell set and get the row and column of the last element.
 		for (Table.Cell<Integer, Integer, Integer> cell : table.cellSet())
 		{
-			this.r = cell.getRowKey(); 			// get the row of the last element that gets used in the table.
-			this.c = cell.getColumnKey() + 1;	// get the column of the last element that gets used in the table.
+			this.r = cell.getRowKey(); 	  // get the row of the last element that gets used in the table.
+			this.c = cell.getColumnKey() + 1; // get the column of the last element that gets used in the table.
 			boolean fillDebug1 = false;
 			if (fillDebug1) {
 				System.out.println("\n" + "fillDebug1: table filled with keyword:");
@@ -97,7 +93,7 @@ public class Ciphergrid {
 			table.put(this.r, this.c, message.get(i)); // Add the new element to the table.
 
 			this.c++; // Increment column number.
-			if (this.c > tableWidth) { // if (this.c > tableWidth - 1 ) {
+			if (this.c > tableWidth) { 
 				this.c = 0; // reset the column number to zero because we've reached the last column in the row.
 				this.r++;   // Increment row number.
 			}
@@ -187,9 +183,9 @@ public class Ciphergrid {
 			{
 				if (cell.getValue() == letters[i]) // If we found a matching element in the table...
 				{ 
-					rowsColumns[count] = cell.getRowKey();			// store the matching cells' row number in the array.
+					rowsColumns[count] = cell.getRowKey();		// store the matching cells' row number in the array.
 					rowsColumns[count + 1] = cell.getColumnKey();	// store the matching cells' column number in the array.
-					rowsColumns[count + 2] = cell.getValue();		// store the matching cells' value in the array.
+					rowsColumns[count + 2] = cell.getValue();	// store the matching cells' value in the array.
 				}
 			}
 			count+=3; // Increment three indexes at a time to get to the next 'letters' value.
@@ -232,21 +228,21 @@ public class Ciphergrid {
 		{
 			if ( firstLetterCol > 14) // If the first 'letter' is in the last column of the table.
 			{
-				firstLetterCol = 0; 		   // Set the new first 'letters' column number to zero. 
+				firstLetterCol = 0; 	       // Set the new first 'letters' column number to zero. 
 				letterArr[1] = firstLetterCol; // Set the array to reflect the change. 
 			}
 			else { // The first 'letter' isn't in the last column of the table.
-				newLetterCol++;		  // Increase the column number by one.
-				letterArr[1] += 1;    // Set the array to reflect the change.   
+				newLetterCol++;	   // Increase the column number by one.
+				letterArr[1] += 1; // Set the array to reflect the change.   
 			}
 			if ( secondLetterCol > 14) // If the second 'letter' is in the last column of the table.
 			{
-				secondLetterCol = 0;			// Set the new the second 'letters' column number to zero.
+				secondLetterCol = 0;		// Set the new the second 'letters' column number to zero.
 				letterArr[4] = secondLetterCol; // Set the array to reflect the change. 
 			}
 			else { // The second 'letter' isn't in the last column of the table.
-				newLetterCol++;		  // Increase the column number by one.
-				letterArr[4] += 1 ;   // Set the array to reflect the change. 
+				newLetterCol++;	    // Increase the column number by one.
+				letterArr[4] += 1 ; // Set the array to reflect the change. 
 			}
 
 		}
@@ -254,22 +250,22 @@ public class Ciphergrid {
 		{
 			if ( firstLetterRow > 14) // If the first 'letter' is in the last row in the table.
 			{
-				firstLetterRow = 0; 			// Set the new column number to row number zero.
+				firstLetterRow = 0; 		// Set the new column number to row number zero.
 				letterArr[0] = firstLetterRow;  // Set the array to reflect the change.
 			}
 			else // The first 'letter' isn't in the last row in the table.
 			{
-				firstLetterRow ++; 				// New encoded 'letter' will be the one below the current one.
+				firstLetterRow ++; 		// New encoded 'letter' will be the one below the current one.
 				letterArr[0] = firstLetterRow;  // Set the array to reflect the change.
 			}
 			if (secondLetterRow > 14) // If the second 'letter' is in the last row in the table.
 			{
-				secondLetterRow = 0; 			// Set the new column number to row number zero.
+				secondLetterRow = 0; 		// Set the new column number to row number zero.
 				letterArr[3] = secondLetterRow; // Set the array to reflect the change.
 			}
 			else
 			{
-				secondLetterRow ++; 			 // new encoded 'letter' will be the one below the current one.
+				secondLetterRow ++; 		 // new encoded 'letter' will be the one below the current one.
 				letterArr[3] = secondLetterRow;  // Set the array to reflect the change.
 			}
 		}
@@ -284,8 +280,7 @@ public class Ciphergrid {
 			letterArr[4] = tempLetter1Col;
 		}
 
-		// Lookup the values in the table using their new row and column. *
-
+		// Lookup the values in the table using their new row and column. 
 		// table.get: Returns the value corresponding to the given row and column keys, or null if no such mapping exists.
 		this.newLetter.add( table.get(letterArr[0], letterArr[1] ));
 		this.newLetter.add( table.get(letterArr[3], letterArr[4] ));
@@ -319,8 +314,8 @@ public class Ciphergrid {
 		fill(this.keywordAsIntArr, this.asciiArray, tableSize);
 
 		this.messageToDecode = messageToDecode; // Copy the incoming message ArrayList.
-		int[] letterPair = new int[2];			// Array to hold two 'letters' of the incoming message.
-		this.decodedMessage = ""; 				// String for holding the decoded message.
+		int[] letterPair = new int[2];		// Array to hold two 'letters' of the incoming message.
+		this.decodedMessage = ""; 		// String for holding the decoded message.
 
 		// Loop through messageToDecode, get a pair of 'letters' 
 		// and add them to the letterPair integer array.
@@ -346,8 +341,7 @@ public class Ciphergrid {
 			if (decodeDebug1) { System.out.println("shape = " + letterInfo[6]); }
 
 			// Pass the two 'letters' held in the letterInfo integer array, to the getDecodedLetter method. 
-			// This will return each 'letters' decoded value.			
-			//this.decodedMessage = getDecodedLetter(letterInfo);
+			// This will return each 'letters' decoded value.
 			this.decodedMessage = this.decodedMessage.concat(getDecodedLetter(letterInfo));
 			boolean decodeDebug3 = false;
 			if (decodeDebug3) { 
@@ -374,50 +368,50 @@ public class Ciphergrid {
 		if (shape == 2) // If both 'letters' are in the same row.
 		{
 			// Test the first 'letter'
-			if ( firstLetterCol < 1)		   // If the first 'letter' is in the first column of the table.
+			if ( firstLetterCol < 1)   // If the first 'letter' is in the first column of the table.
 			{
-				firstLetterCol = 15; 		   // Set the first 'letters' new column number to be the last column in the table.
+				firstLetterCol = 15; 	       // Set the first 'letters' new column number to be the last column in the table.
 				letterArr[1] = firstLetterCol; // Set the array to reflect the change. 
 			}
 			else { // The first 'letter' isn't in the first column of the table.
-				newLetterCol--;		  // Decrease the column number by one.
-				letterArr[1] -= 1;    // Set the array to reflect the change.   
+				newLetterCol--;	   // Decrease the column number by one.
+				letterArr[1] -= 1; // Set the array to reflect the change.   
 			}
 
 			// Test the second 'letter'
-			if ( secondLetterCol < 1)		    // If the second 'letter' is in the first column of the table (column 0)
+			if ( secondLetterCol < 1) // If the second 'letter' is in the first column of the table (column 0)
 			{
-				secondLetterCol = 15; 		    // Set the second 'letters' new column number to be the last column in the table.  
+				secondLetterCol = 15; // Set the second 'letters' new column number to be the last column in the table.  
 				letterArr[4] = secondLetterCol; // Set the array to reflect the change. 
 			}
 			else { // The second 'letter' isn't in the first column of the table.
-				newLetterCol--;		  // Increase the column number by one.
-				letterArr[4] -= 1;    // Set the array to reflect the change.   
+				newLetterCol--;	   // Increase the column number by one.
+				letterArr[4] -= 1; // Set the array to reflect the change.   
 			}
 		}
 		else if (shape == 3)  // If both 'letters' are in the same column. 
 		{
 			if ( firstLetterRow < 1)	// If the first 'letter' is in the first row in the table (row 0)
 			{
-				firstLetterRow = 15; 			// Set the new row number to the last row in the table (row 15)
+				firstLetterRow = 15; 		// Set the new row number to the last row in the table (row 15)
 				letterArr[0] = firstLetterRow;  // Set the array to reflect the change.
 
 			}
 			else // The first 'letter' isn't in the first row of the table.
 			{
-				firstLetterRow --; 				// New encoded 'letter' will be the one above the current one.
+				firstLetterRow --; 		// New encoded 'letter' will be the one above the current one.
 				letterArr[0] = firstLetterRow;  // Set the array to reflect the change.
 
 			}
 			if (secondLetterRow < 1) // If the second 'letter' is in the first row in the table.
 			{
-				secondLetterRow = 15; 			// Set the new row number to the last row in the table (row 15)
+				secondLetterRow = 15; 		// Set the new row number to the last row in the table (row 15)
 				letterArr[3] = secondLetterRow; // Set the array to reflect the change.
 			}
 
 			else
 			{
-				secondLetterRow --; 			 // New encoded 'letter' will be the one above the current one.
+				secondLetterRow --; 		 // New encoded 'letter' will be the one above the current one.
 				letterArr[3] = secondLetterRow;  // Set the array to reflect the change.
 			}
 		}
@@ -443,7 +437,7 @@ public class Ciphergrid {
 		char c1 = '\0';
 		char c2 = '\0';
 		
-		// filter out Ý = ASCII integer 221, Latin capital letter Y with acute. http://www.ascii-code.com/
+		// filter out Ã = ASCII integer 221, Latin capital letter Y with acute. http://www.ascii-code.com/
 		if (x1 != 211) {
 			c1 = (char)x1;		
 		}
