@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 public class Keyword {
 
 	// Constructor
-	public Keyword() {
-		
-	}
+	public Keyword() {	}
 	
 	// Map for removing all duplicate letters in the keyword.
 	private Map<Integer, Integer> keywordMap = new LinkedHashMap<Integer, Integer>();
@@ -31,7 +28,9 @@ public class Keyword {
 		ArrayList<Integer> keywordAsIntArray = new ArrayList<Integer>(this.keywordMap.keySet());
 		
 		boolean keywordToIntArrDebug = false;
-		if (keywordToIntArrDebug) {System.out.println("\n" + "map.keySet() from keyslist ArrayList = " + keywordAsIntArray.toString());}
+		if (keywordToIntArrDebug) {
+			System.out.println("\n" + "map.keySet() from keyslist ArrayList = " + keywordAsIntArray.toString());
+		}
 		
 		return keywordAsIntArray;
 	}// END keywordToIntArr()
