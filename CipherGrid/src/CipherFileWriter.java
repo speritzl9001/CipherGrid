@@ -4,10 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 public class CipherFileWriter {
 	
-	//private File selectedFile;
 	private String csvFile;
 	private FileWriter fw;
 	
@@ -36,8 +34,8 @@ public class CipherFileWriter {
 
 	public void writeDecodedMsgToFile (String decodedMsg, String fileName) throws IOException {
 		
-		String output = decodedMsg;			// Copy the incoming decoded message String.
-		String fileToWriteIn = fileName;	// Copy the incoming file name String.
+		String output = decodedMsg;	 // Copy the incoming decoded message String.
+		String fileToWriteIn = fileName; // Copy the incoming file name String.
 		
 		// Add "_decoded.txt" to the end of the file name.
 		fileToWriteIn = fileToWriteIn.substring(0, fileToWriteIn.lastIndexOf("_encoded.txt"));
@@ -46,12 +44,12 @@ public class CipherFileWriter {
 		//System.out.println("fileToWriteIn = " + fileToWriteIn);
 		
 		// Remove any padding characters that might have been added during the encoding process.
-		// ( ASCII integer 210	Ò  Latin capital letter O with grave )  http://www.ascii-code.com/
-		output = output.replaceAll("Ø", "");
+		// ( ASCII integer 210	Ã’  Latin capital letter O with grave )  http://www.ascii-code.com/
+		output = output.replaceAll("Ã˜", "");
 		//System.out.println("output = " + output);
 				
 		// Create a FileWriter object and pass it the file to write to.
-		FileWriter fw = new FileWriter(fileToWriteIn); //FileWriter fw = new FileWriter(fileToWriteIn, true);
+		FileWriter fw = new FileWriter(fileToWriteIn); 
 		BufferedWriter bw = new BufferedWriter(fw);
 		bw.write(output);
 		bw.close();
