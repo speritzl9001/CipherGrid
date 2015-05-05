@@ -7,8 +7,7 @@ Please see <a href="https://github.com/speritzl9001/CipherGrid/blob/master/Ciphe
 
 Dependencies: <a href="https://code.google.com/p/guava-libraries/" target="_blank">Google Guava Libraries</a>  
 
-Several Google Guava classes are used including:  
-HashBasedTable,LinkedHashMap and Splitter.  
+Several Google Guava classes are used including: HashBasedTable,LinkedHashMap and Splitter.  
 
 In HashBasedTable, each cell of the table contains two keys and one value so it's perfect for the Playfair cipher.  
 The two keys are row and column, the value is the ASCII integer value of a letter.  
@@ -26,6 +25,7 @@ Splitter is an replacement for the problematic built-in Java string splitting cl
 > The built in Java utilities for splitting strings can have some quirky behaviors. For example, String.split silently discards trailing separators, and StringTokenizer respects exactly five whitespace characters and nothing else.
 >  
 <a href="https://code.google.com/p/guava-libraries/wiki/StringsExplained" target="_blank">Google Guava Splitter</a>  
+
 ********
 
 Eclipse is an free, open source integrated development environment (IDE). Written mostly in Java, Eclipse can be used to develop applications. <a href="http://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2" target="_blank">Eclipse for Java developers</a>  
