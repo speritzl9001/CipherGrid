@@ -7,7 +7,7 @@ Please see <a href="https://github.com/speritzl9001/CipherGrid/blob/master/Ciphe
 
 Dependencies: <a href="https://code.google.com/p/guava-libraries/" target="_blank">Google Guava Libraries</a>  
 
-Several Google Guava classes are used including: HashBasedTable,LinkedHashMap and Splitter.  
+Several Google Guava classes are used including: HashBasedTable, LinkedHashMap and Splitter.  
 
 In HashBasedTable, each cell of the table contains two keys and one value so it's perfect for the Playfair cipher. The two keys are row and column, the value is the ASCII integer value of a letter.  
 
