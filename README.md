@@ -28,7 +28,7 @@ Splitter is an replacement for the problematic built-in Java string splitting cl
 
 ********
 
-Eclipse is an free, open source integrated development environment (IDE). Written mostly in Java, Eclipse can be used to develop applications. <a href="http://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2" target="_blank">Eclipse for Java developers</a>  
+<h3>Eclipse</h3> is an free, open source integrated development environment (IDE). Written mostly in Java, Eclipse can be used to develop applications. <a href="http://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2" target="_blank">Eclipse for Java developers</a>  
 
 Through plug-ins, Eclipse can also be used to develop applications in other programming languages:  
 Ada, ABAP, C, C++, COBOL, Fortran, Haskell, JavaScript, Lasso, Lua, Natural, Perl, PHP, Prolog, Python(PyDev), R, Ruby (including Ruby on Rails framework), Scala, Clojure, Groovy, Scheme, and Erlang.  
