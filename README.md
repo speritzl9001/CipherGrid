@@ -20,7 +20,7 @@ private Map keywordMap = new LinkedHashMap();
 
 Eclipse is an free, open source integrated development environment (IDE). Written mostly in Java, Eclipse can be used to develop applications. <a href="http://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2" target="_blank">Eclipse for Java developers</a>  
 
-Thru plug-ins, Eclipse can also be used to develop applications in other programming languages:  
+Through plug-ins, Eclipse can also be used to develop applications in other programming languages:  
 Ada, ABAP, C, C++, COBOL, Fortran, Haskell, JavaScript, Lasso, Lua, Natural, Perl, PHP, Prolog, Python(PyDev), R, Ruby (including Ruby on Rails framework), Scala, Clojure, Groovy, Scheme, and Erlang.  
 
 To import the Google Guava libraries into the Eclipse IDE:   
