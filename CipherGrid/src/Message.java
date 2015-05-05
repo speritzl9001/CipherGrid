@@ -3,15 +3,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
-
 import com.google.common.base.Splitter;
-
 
 public class Message {
 	
-	public Message() {
-		
-	}
+	public Message() {	}
 	
 	private ArrayList<Integer> fileMsgIntArray = new ArrayList<Integer>(0);
 	private ArrayList<Integer> fileMessageAsInts = new ArrayList<Integer>(0);
@@ -21,8 +17,8 @@ public class Message {
 	
 	// Reads in the message file and converts the letters to Integers
 	// with the helper method messageToIntArray.
-	public ArrayList<Integer> readMessageFile(String fileName) {
-				
+	public ArrayList<Integer> readMessageFile(String fileName)
+	{
 		try {
 			this.line = "";
 			this.messageFilePath = fileName;
@@ -33,7 +29,6 @@ public class Message {
 			{
 				this.line += scanner.next();
 			}
-						
 			scanner.close();
 			
 			// Pass the string to the messageToIntArray method.
@@ -42,18 +37,21 @@ public class Message {
 			this.fileMessageAsInts = messageToIntArray(this.line);
 			
 			// Loop through the fileMessageAsInts ArrayList.
-			for (int i=0; i<fileMessageAsInts.size()-1; i++) {
+			for (int i=0; i<fileMessageAsInts.size()-1; i++)
+			{
 				// If there are any two elements next to each other that are the same...
-				if (fileMessageAsInts.get(i) == fileMessageAsInts.get(i+1)) {
-					// Add ASCII integer 216, 'ÿ' Latin capital letter O with slash. http://www.ascii-code.com/
+				if (fileMessageAsInts.get(i) == fileMessageAsInts.get(i+1))
+				{
+					// Add ASCII integer 216, '√ò' Latin capital letter O with slash. http://www.ascii-code.com/
 					fileMessageAsInts.add(i+1, 216);
 				}
 			}
 			
 			// If the length of the array is not even...
-			if ( (fileMessageAsInts.size() % 2) != 0 ) {
-				// Add the character › at the end.
-				// › = ASCII integer 221, Latin capital letter Y with acute. http://www.ascii-code.com/
+			if ( (fileMessageAsInts.size() % 2) != 0 )
+			{
+				// Add the character √ù at the end.
+				// √ù = ASCII integer 221, Latin capital letter Y with acute. http://www.ascii-code.com/
 				fileMessageAsInts.add(211);
 			}
 			boolean MessageDebug = false;
@@ -68,31 +66,35 @@ public class Message {
 		return this.fileMessageAsInts;
 	}
 	
-	private ArrayList<Integer> messageToIntArray(String string) {
-		for (int i=0; i<string.length();i++) {
+	private ArrayList<Integer> messageToIntArray(String string)
+	{
+		for (int i=0; i<string.length();i++)
+		{
 			fileMsgIntArray.add((int)string.charAt(i));
 		}
 		return fileMsgIntArray;
 	}
 	
-	public ArrayList<Integer> quickmessage(String message) {
-		
+	public ArrayList<Integer> quickmessage(String message)
+	{
 		this.messageQuick = message;
-		if ( (this.messageQuick.length() % 2) != 0 ) {
-			this.messageQuick = this.messageQuick.concat("›");
+		if ( (this.messageQuick.length() % 2) != 0 )
+		{
+			this.messageQuick = this.messageQuick.concat("√ù");
 		}
 		
 		// Fill the ArrayList with the message from the JTextArea
 		// converting the letters to integers as we fill.
 		ArrayList<Integer> quickMessageToIntArr = new ArrayList<Integer>(0);
-		for (int i=0; i<this.messageQuick.length(); i++) {
+		for (int i=0; i<this.messageQuick.length(); i++)
+		{
 			quickMessageToIntArr.add((int)this.messageQuick.charAt(i));
 		}
 		return quickMessageToIntArr;
 	}
 	
-	public ArrayList<Integer> quickMessageDecode(String message) {
-		
+	public ArrayList<Integer> quickMessageDecode(String message)
+	{
 		String quickmessage = message;
 		// http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/base/Splitter.html#on%28char%29
 		// Returns a splitter that uses the given single-character separator.
@@ -102,7 +104,8 @@ public class Message {
 		ArrayList<Integer> quickMessageToIntArr = new ArrayList<Integer>(0);
 		Splitter splitter = Splitter.on(',');
 		Iterable<String> numbers = splitter.split(quickmessage);
-		for(String number : numbers) {
+		for(String number : numbers)
+		{
 			int num = Integer.parseInt(number);
 			quickMessageToIntArr.add(num);
 			//System.out.println(num);
