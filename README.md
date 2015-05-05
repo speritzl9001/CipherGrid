@@ -9,8 +9,7 @@ Dependencies: <a href="https://code.google.com/p/guava-libraries/" target="_blan
 
 Several Google Guava classes are used including: HashBasedTable,LinkedHashMap and Splitter.  
 
-In HashBasedTable, each cell of the table contains two keys and one value so it's perfect for the Playfair cipher.  
-The two keys are row and column, the value is the ASCII integer value of a letter.  
+In HashBasedTable, each cell of the table contains two keys and one value so it's perfect for the Playfair cipher. The two keys are row and column, the value is the ASCII integer value of a letter.  
 
 ```java
 private Table<Integer,Integer,Integer> table = HashBasedTable.create(1, 1, 12);  
