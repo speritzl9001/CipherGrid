@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 public class Process {
 	
 	private String keywordAsString = "";
@@ -21,12 +20,10 @@ public class Process {
 	ArrayList<Integer> fileMessageAsInteger = new ArrayList<Integer>(0);
 	
 	// Constructor
-	public void process() {
-		
-	}
+	public void process() { 	}
 	
-	public void processKeyword(String keyword) {
-		
+	public void processKeyword(String keyword)
+	{
 		// Copy incoming keyword String
 		this.keywordAsString = keyword;
 				
@@ -40,7 +37,8 @@ public class Process {
 		createAsciiArr();
 		
 		// Remove the keyword letters from the asciiArray. 
-		for (int i=0; i<this.keywordAsIntsNoDup.size(); i++) {
+		for (int i=0; i<this.keywordAsIntsNoDup.size(); i++)
+		{
 			Integer letterToSearchFor = this.keywordAsIntsNoDup.get(i);
 			if (this.asciiArray.contains(letterToSearchFor))
 			{
@@ -49,9 +47,8 @@ public class Process {
 		}
 	}// END processKeyword()
 	
-	
-	public ArrayList<Integer> removeDuplicates(String keyword) {
-		
+	public ArrayList<Integer> removeDuplicates(String keyword)
+	{
 		// Copy incoming keyword String
 		this.keyword = keyword;
 
@@ -70,12 +67,14 @@ public class Process {
 		return keyslist;
 	}
 	
-	public void createAsciiArr() {
-
+	public void createAsciiArr()
+	{
 		// Use an enhanced for loop to fill the asciiArray ArrayList
 		// with all 256 ASCII characters as integers.
-		for (int i=0; i<256; i++) {
+		for (int i=0; i<256; i++)
+		{
 			this.asciiArray.add(i);
 		}
 	}// END createAsciiArr()
+	
 }// END class
