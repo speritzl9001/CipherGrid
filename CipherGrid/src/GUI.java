@@ -69,7 +69,7 @@ public class GUI{
 
 		frmEncoderfinalProject = new JFrame();
 		frmEncoderfinalProject.getContentPane().setForeground(Color.LIGHT_GRAY);
-		frmEncoderfinalProject.setTitle("Playfair Cipher");
+		frmEncoderfinalProject.setTitle("CipherGrid");
 		frmEncoderfinalProject.setBounds(100, 100, 930, 635);
 		frmEncoderfinalProject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -509,7 +509,7 @@ public class GUI{
 							String decodeMessage = "";
 							decodeMessage = ciphergrid.decode(password, messageToDecodeArr);
 							// Trim off any end of string padding characters.
-							decodeMessage = decodeMessage.replaceAll("Ý", "");
+							decodeMessage = decodeMessage.replaceAll("ï¿½", "");
 							txtAreaOutput.setText(decodeMessage);
 						}
 					}
