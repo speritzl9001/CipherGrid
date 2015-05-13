@@ -37,7 +37,6 @@ public class GUI{
 	@SuppressWarnings("unused")
 	private final Action action = new SwingAction();
 
-
 	/**
 	 * Launch the application.
 	 */
@@ -238,8 +237,6 @@ public class GUI{
 			}
 		});
 
-
-
 		// MENU BAR:
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 914, 21);
@@ -303,8 +300,11 @@ public class GUI{
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "CipherGrid: A Java based implementation of the Playfair cipher." +
-													"\n\nhttp://en.wikipedia.org/wiki/Playfair_cipher\n\n", "About CipherGrid", 2);
+				JOptionPane.showMessageDialog(null,
+							"CipherGrid: A Java based implementation of the Playfair cipher." +
+							"\n\nhttp://en.wikipedia.org/wiki/Playfair_cipher\n\n",
+							"About CipherGrid",
+							2);
 			}
 		});
 		mnNeedHelp.add(mntmAbout);
@@ -322,8 +322,6 @@ public class GUI{
 		});
 		btnClear.setBounds(472, 137, 108, 31);
 		frmEncoderfinalProject.getContentPane().add(btnClear);
-
-
 
 		// Quick mode radio button ActionListener.
 		rdbtnQuickMode.addActionListener(new ActionListener() {
@@ -363,12 +361,14 @@ public class GUI{
 
 				if (password.length()<5 || password.length()>255)
 				{
-					JOptionPane.showMessageDialog(null, "Keyword must be greater than 5 and less then 255 characters long. Please try again.");
+					JOptionPane.showMessageDialog(null,
+						"Keyword must be greater than 5 and less then 255 characters long. Please try again.");
 				}
 				else { // OK to process
 					if (rdbtnFileMode.isSelected()) { // File Mode selected	
 						if (txtFilePath.getText().isEmpty()) {
-							JOptionPane.showMessageDialog(null, "Please enter a file location and try again.");
+							JOptionPane.showMessageDialog(null,
+								"Please enter a file location and try again.");
 						}
 						else { // OK to process further.
 							String filePath = txtFilePath.getText();
@@ -449,7 +449,8 @@ public class GUI{
 
 					if (password.length()<5 || password.length()>255)
 					{
-						JOptionPane.showMessageDialog(null, "Keyword must be greater then five and less then 255 characters long. Please try again.");
+						JOptionPane.showMessageDialog(null,
+							"Keyword must be greater then five and less then 255 characters long. Please try again.");
 					}
 					else { // OK to process
 						if (rdbtnFileMode.isSelected()) { // File Mode selected	
@@ -509,7 +510,7 @@ public class GUI{
 							String decodeMessage = "";
 							decodeMessage = ciphergrid.decode(password, messageToDecodeArr);
 							// Trim off any end of string padding characters.
-							decodeMessage = decodeMessage.replaceAll("�", "");
+							decodeMessage = decodeMessage.replaceAll("Ý", "");
 							txtAreaOutput.setText(decodeMessage);
 						}
 					}
